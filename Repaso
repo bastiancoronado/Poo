@@ -1,0 +1,46 @@
+//Cosoto llamada
+    Console.WriteLine("Tiempo de la llamada");
+    short minutos=short.Parse(Console.ReadLine());
+    float costo=0.0f;
+    if (minutos<3)
+    {
+      costo=(short)minutos*0.16f;
+    }
+    else
+    {
+      costo=0.5f+((short)minutos-3)*0.1f;
+    }
+    Console.WriteLine("El cosoto de la llamada de "+minutos+" es de "+costo);
+    
+//Imprimir suma de 1 hasta n
+    Console.WriteLine("Ingresar numero N");
+    short N=short.Parse(Console.ReadLine()),suma=0,total=0,contador=0;
+
+    while(contador<N)
+    {
+      contador++;
+      suma++;
+      total+=suma;
+    }
+    Console.WriteLine("El total de la suma de 1 hasta N es "+total);
+
+//Imprimir suma de 1 hata n solo con multplos de 3
+    Console.WriteLine("Ingresar numero N");
+    short N=short.Parse(Console.ReadLine()),suma=0,total=0,contador=0;
+
+    while(contador<N)
+    {
+      contador++;
+      suma++;
+      if(suma%3==0)total+=suma;    
+    }
+    Console.WriteLine("El total de la suma de 1 hasta N  solo con multiplos de 3 es "+total);
+
+//Tabla de multiplicar nx12
+
+    Console.WriteLine("Escriba un valor para N");
+    short N=short.Parse(Console.ReadLine());
+    
+    for(short i=1;i<=12;i++)Console.WriteLine(N+"X"+i+"="+(i*N));
+    
+//
