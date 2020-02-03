@@ -200,3 +200,50 @@ class MainClass {
     }
     Console.WriteLine("\nLos numeros menores o iguales a 25 son:");
     for(short i=0;i<num25.Length;i++)Console.Write("\n"+num25[i]);
+
+//Lista de 100 
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+
+
+
+class MainClass {
+  public static void Main (string[] args) {
+    List<short> numeros=new List<short>();
+    Random ale = new Random();
+    short suma=0;
+    Console.WriteLine("Los numeros son: ");
+    for(short i=0;i<100;i++)
+    {
+      numeros.Add((short)ale.Next(1,101));
+      if(numeros.ElementAt(i)%3==0)suma+=numeros.ElementAt(i);
+      Console.Write(numeros.ElementAt(i)+" ");
+    }
+    Console.WriteLine("\nLa suma es "+suma);
+
+  }
+}
+
+//30 primeras potenicas de 3 y suma
+    float Suma_Pow=0.0f;
+
+    for(short i=1;i<=30;i++)
+    {
+      Console.WriteLine("La potencia "+i+" es "+(float)Math.Pow(3,i));
+      Suma_Pow+=(float)Math.Pow(3,i);
+    }
+    Console.WriteLine("La suma de las 30 primeras potencias de 3 es "+Suma_Pow);
+    
+    //sin cast
+        double Suma_Pow=0.0f;
+
+    for(short i=1;i<=30;i++)
+    {
+      Console.WriteLine("La potencia "+i+" es "+Math.Pow(3,i));
+      Suma_Pow+=Math.Pow(3,i);
+    }
+    Console.WriteLine("La suma de las 30 primeras potencias de 3 es "+Suma_Pow);
+    
+    
