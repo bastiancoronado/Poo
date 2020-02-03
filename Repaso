@@ -43,4 +43,160 @@
     
     for(short i=1;i<=12;i++)Console.WriteLine(N+"X"+i+"="+(i*N));
     
-//
+//Lista: numero mas grande
+using System;
+using System.IO;
+using System.Collections.Generic;
+
+class MainClass {
+  public static void Main (string[] args) {
+
+    Random ale = new Random();
+    List<short> Numeros= new List<short>();
+    short mayor=0;
+
+    for(short i=0;i<5;i++)
+    {
+      Numeros.Add((short)ale.Next(1,11));
+      Console.Write(Numeros[i]+" ");
+      if(mayor<Numeros[i])mayor=Numeros[i];
+    }
+    Console.WriteLine("El mayor numero de la lista es "+mayor);
+
+  }
+}
+//Lista de 100 numeros imrpimir mayor y menor
+    Random ale = new Random();
+    List<short> Numeros= new List<short>();
+    short mayor=0, menor=111;
+
+    for(short i=0;i<100;i++)
+    {
+      Numeros.Add((short)ale.Next(1,110));
+      Console.Write(Numeros[i]+" | ");
+      if(mayor<Numeros[i])mayor=Numeros[i];
+      if(menor>Numeros[i])menor=Numeros[i];
+    }
+    Console.WriteLine("El mayor numero de la lista es "+mayor+" y el menor es "+menor);
+    
+//Elegir operacion de suma o resta
+    Console.WriteLine("Elija un numero N");
+    short N=short.Parse(Console.ReadLine()),N2=0;
+    
+
+    Console.WriteLine("Que quiere hacer con N: \nSumarlo(1) \nmultiplicarlo(2)");
+    string opcion=Console.ReadLine();
+
+    switch (opcion.Substring(0))
+    {
+      case "1":
+        Console.WriteLine("\nSuma:\n");
+        Console.WriteLine("Que numero quiere sumar con N\n");
+        N2 =short.Parse(Console.ReadLine());
+        Console.WriteLine("Opercion final: "+(N+N2));
+        break; 
+      case "2":
+        Console.WriteLine("\nProducto:\n");
+        Console.WriteLine("Que numero quiere multiplicar con N\n");
+        N2 =short.Parse(Console.ReadLine());
+        Console.WriteLine("Opercion final: "+(N*N2));
+        break;
+      default:
+        break;
+    }
+    
+//generar notas, promedio de aprobados y reprobados
+    Random Aleatorio=new Random();
+
+    short algo =(short)Aleatorio.Next(5,21),B,ap=0,re=0;
+    float A,Apro=0.0f,Repro=0.0f;
+    Console.WriteLine("El numero es "+algo);
+    
+
+    float[] notas=new float[algo];
+    
+    for(short i=0;i<notas.Length;i++)//crear notas
+    {
+      A=Aleatorio.Next(1,10);
+      B=(short)Aleatorio.Next(0,6);
+      
+      if((A/10+B)>5) notas[i]=5.0f;
+      else notas[i]=A/10+B;// redondear si la nota>5
+    }
+
+    for(short i=0;i<notas.Length;i++)//Promedios
+    {
+      if(notas[i]>=3.0)
+      {
+        Apro+=notas[i];
+        ap++;
+      }
+      else 
+      {
+        Repro+=notas[i];
+        re++;
+      }
+    }
+    Console.WriteLine("El promedio de los aprobados fueron de "+(Apro/ap)+" y los reprobados fueron "+(Repro/re));
+    
+//Dado N calcular:(1¹)+(2²)+(3³)+......+(N*N)
+    Random Aleatorio=new Random();
+    int N=Aleatorio.Next(1,5);
+    float Resultado=0;
+    Console.WriteLine("N es "+N);
+
+
+    for(short i=1;i<=N;i++)Resultado+=(float)Math.Pow(i,i);
+       
+    Console.WriteLine("El resultdo es "+Resultado);
+    
+//Descuento segun la compra
+    Random Aleatorio=new Random();
+    float compra=Aleatorio.Next(10,150);
+    string descuento;
+    
+    float resultado=0.0f;
+
+    if(compra>100)
+    {
+      resultado=(float)(compra-(compra*0.1));
+      descuento="con un descuento del 10%";
+    }
+    else if(compra<=100&&compra>50)
+    {
+      resultado=(float)(compra-(compra*0.2));
+      descuento="con un descuento del 20%";
+    }
+    else
+    {
+      resultado=compra;
+      descuento="sin ningun descuento";
+    }
+    Console.WriteLine("La compra fue de "+(int)resultado+" y "+descuento+" con un valor original de " +compra);
+    
+//ingresar 20 numeros e imprimir numeros <=25
+    Console.WriteLine("Ingrese 20 numeros");
+    //Random Ale=new Random();
+    short[] numeros= new short[20];
+
+    short cont=0,A=0; 
+
+    for(short i=0;i<numeros.Length;i++)
+    {
+      numeros[i]=short.Parse(Console.ReadLine());
+      //numeros[i]=(short)Ale.Next(10,50);
+      if(numeros[i]<=25)cont++;
+      Console.Write(numeros[i]+" ");
+    }
+
+    short[] num25=new short[cont];
+    for(short i=0;i<numeros.Length;i++)
+    {
+      if(numeros[i]<=25)
+      {
+        num25[A]=numeros[i];
+        A++;
+      }
+    }
+    Console.WriteLine("\nLos numeros menores o iguales a 25 son:");
+    for(short i=0;i<num25.Length;i++)Console.Write("\n"+num25[i]);
