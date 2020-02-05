@@ -246,4 +246,5 @@ class MainClass {
     }
     Console.WriteLine("La suma de las 30 primeras potencias de 3 es "+Suma_Pow);
     
-    
+//salarios
+
